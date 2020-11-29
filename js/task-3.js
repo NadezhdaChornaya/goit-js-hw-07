@@ -1,0 +1,66 @@
+// Напиши скрипт для создания галлереи изображений по массиву данных.
+
+// В HTML есть список ul#gallery.
+
+// < ul id = "gallery" ></ul >
+//     Используй массив объектов images для создания тегов img вложенных в li.
+// Для создания разметки используй шаблонные строки и insertAdjacentHTML().
+
+// Все элементы галереи должны добавляться в DOM за одну операцию вставки.
+// Добавь минимальное оформление галереи флексбоксами или гридами через css - классы.
+
+const images = [
+    {
+        url:
+            'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+        alt: 'White and Black Long Fur Cat',
+    },
+    {
+        url:
+            'https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+        alt: 'Orange and White Koi Fish Near Yellow Koi Fish',
+    },
+    {
+        url:
+            'https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+        alt: 'Group of Horses Running',
+    },
+];
+
+const galleryRef = document.querySelector("#gallery");
+
+
+
+// const createMarkup = images.reduce((acc, img }) => {
+//     // let { url, alt } = img;
+//     let markup = `<li><img scr = ${url} alt = ${alt} wight = 300></li>`
+//     acc += markup
+//     return acc
+// }, "")
+
+
+const createMarkup = ({ url, alt }) =>
+    `<li><img scr = ${url} alt = ${alt} wight = 300></li>`
+const getMarkupGallery = images.reduce((acc, img) => { acc += createMarkup(img); return acc }, "")
+
+galleryRef.insertAdjacentHTML("afterbegin", getMarkupGallery);
+console.log(galleryRef);
+
+galleryRef.style.listStyle = "none";
+galleryRef.style.display = "flex";
+galleryRef.style.marginRight = "10px";
+
+
+// const createMarkup = images.forEach((image) => {
+//     let liElement = document.createElement('li');
+//     let imgElement = document.createElement('img');
+//     imgElement.setAttribute("scr", image.url)
+//     imgElement.setAttribute("alt", image.alt)
+//     liElement.appendChild(imgElement);
+//     console.log(liElement);
+//     galleryRef.append(liElement)
+//     return galleryRef;
+// }
+// );
+
+// console.log(createMarkup);
