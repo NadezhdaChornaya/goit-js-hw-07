@@ -6,12 +6,12 @@
 //     <h1>Привет, <span id="name-output">незнакомец</span>!</h1> */}
 
 
-const inputName = document.querySelector('#name-input');
-const textName = document.querySelector('#name-output');
+const inputRef = document.querySelector('#name-input');
+const spanRef = document.querySelector('#name-output');
 
-inputName.addEventListener("input", onInput);
+inputRef.addEventListener("input", onInput);
 
 function onInput() {
-    textName.textContent = (inputName.value === '') ? textName.textContent = "незнакомец" : textName.textContent = inputName.value;
+    textName.textContent = (inputRef.value === '') ? spanRef.textContent = "незнакомец" : spanRef.textContent = inputRef.value;
 }
 
