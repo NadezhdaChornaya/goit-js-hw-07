@@ -14,24 +14,15 @@
 
 
 
-// let items = document.querySelectorAll(".item")
-let ul = document.getElementById("categories");
-let items = ul.querySelectorAll(".item");
-console.log(items);
-console.log(`В списке ${items.length} категории`);
-// const categories = document.querySelector('#categories');
-// console.log(categories);
 
-// console.log(categories.classList.contains("item"));
+const ulRef = document.getElementById("categories");
+const itemsRef = ulRef.querySelectorAll(".item");
+// console.log(itemsRef);
+console.log(`В списке ${itemsRef.length} категории`);
 
-// const result = list.classList.contains('list');
-// console.log(result);
 
-// const object = info.find(item=> item.id === first.dataset.id);
-// console.log(object);
+itemsRef.forEach((listItem) => {
 
-items.forEach((listItem) => {
-    // console.log(listItem);
     const h2 = listItem.querySelector("h2");
     const li = listItem.querySelectorAll("li")
     console.log(li.length);
@@ -41,4 +32,3 @@ items.forEach((listItem) => {
 
 
 
-console.dir(window.document);  

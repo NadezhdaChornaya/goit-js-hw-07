@@ -16,24 +16,14 @@ const ingredients = [
 // Для создания DOM - узлов используй document.createElement().
 
 let listRef = document.querySelector("#ingredients")
-console.dir(listRef);
-let newItems = ingredients.forEach((item) => {
+
+const newItems = ingredients.forEach((item) => {
+
     let liItem = document.createElement('li');
     liItem.textContent = item;
     listRef.append(liItem);
-    return listRef
-})
+    return liItem
+});
 console.log(listRef);
 
 
-
-// =======================================================================
-// let ulList = document.getElementById("ingredients");
-// const foodIngredients = ingredients.forEach(ingredient => {
-//     let items = document.createElement("li");
-//     items.innerHTML = ingredient;
-//     ulList.append(items);
-//     parent.append(...items)
-// });
-
-// console.log(foodIngredients);

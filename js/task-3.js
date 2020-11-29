@@ -27,40 +27,18 @@ const images = [
     },
 ];
 
-const galleryRef = document.querySelector("#gallery");
-
-
-
-// const createMarkup = images.reduce((acc, img }) => {
-//     // let { url, alt } = img;
-//     let markup = `<li><img scr = ${url} alt = ${alt} wight = 300></li>`
-//     acc += markup
-//     return acc
-// }, "")
+let galleryRef = document.querySelector("#gallery");
 
 
 const createMarkup = ({ url, alt }) =>
-    `<li><img scr = ${url} alt = ${alt} wight = 300></li>`
+    `<li><img src='${url}' alt='${alt}' width='300' height='170' /></li> `
 const getMarkupGallery = images.reduce((acc, img) => { acc += createMarkup(img); return acc }, "")
 
 galleryRef.insertAdjacentHTML("afterbegin", getMarkupGallery);
-console.log(galleryRef);
+
 
 galleryRef.style.listStyle = "none";
 galleryRef.style.display = "flex";
-galleryRef.style.marginRight = "10px";
 
 
-// const createMarkup = images.forEach((image) => {
-//     let liElement = document.createElement('li');
-//     let imgElement = document.createElement('img');
-//     imgElement.setAttribute("scr", image.url)
-//     imgElement.setAttribute("alt", image.alt)
-//     liElement.appendChild(imgElement);
-//     console.log(liElement);
-//     galleryRef.append(liElement)
-//     return galleryRef;
-// }
-// );
 
-// console.log(createMarkup);
