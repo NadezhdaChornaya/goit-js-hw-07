@@ -9,9 +9,11 @@
 const inputRef = document.querySelector('#name-input');
 const spanRef = document.querySelector('#name-output');
 
-inputRef.addEventListener("input", onInput);
 
-function onInput() {
+
+const onInput = function () {
     textName.textContent = (inputRef.value === '') ? spanRef.textContent = "незнакомец" : spanRef.textContent = inputRef.value;
 }
+
+inputRef.addEventListener("input", onInput);
 
