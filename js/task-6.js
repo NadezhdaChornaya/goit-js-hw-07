@@ -29,9 +29,9 @@ console.log(inputRef.value.length);
 
 const quantityOfSymbols = Number(inputRef.getAttribute("data-length"));
 
-inputRef.addEventListener("blur", onInput);
 
-function onInput() {
+
+const onInput = function () {
     if (quantityOfSymbols === inputRef.value.length) {
         inputRef.classList.add("valid");
         inputRef.classList.remove("invalid");
@@ -46,3 +46,5 @@ function onInput() {
 
     }
 }
+
+inputRef.addEventListener("blur", onInput);
